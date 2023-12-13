@@ -1,0 +1,90 @@
+{
+	"info": {
+		"_postman_id": "4591da0a-1844-4bad-b9a0-e3ac7c73be01",
+		"name": "API Triggers",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "7164872"
+	},
+	"item": [
+		{
+			"name": "Set Entry No",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"setEntryNo\": true\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://BC23:7048/BC/api/companial/triggers/beta/companies(c50aa7ca-cf97-ee11-be3b-6045bdaccf08)/entries",
+					"protocol": "http",
+					"host": [
+						"BC23"
+					],
+					"port": "7048",
+					"path": [
+						"BC",
+						"api",
+						"companial",
+						"triggers",
+						"beta",
+						"companies(c50aa7ca-cf97-ee11-be3b-6045bdaccf08)",
+						"entries"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "PROOF OF CONCEPT",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"entryNo\": 1,\r\n    \"booleanValue\": false,\r\n    \"lines\": [\r\n        {\r\n            \"codeValue\": \"CV\",\r\n            \"textValue\": \"cv\"\r\n        },\r\n        {\r\n            \"codeValue\": \"VC\",\r\n            \"textValue\": \"vc\"\r\n        }\r\n    ],\r\n    \"dateValue\": \"2023-12-08\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://BC23:7048/BC/api/companial/triggers/beta/companies(c50aa7ca-cf97-ee11-be3b-6045bdaccf08)/headers/?$expand=lines",
+					"protocol": "http",
+					"host": [
+						"BC23"
+					],
+					"port": "7048",
+					"path": [
+						"BC",
+						"api",
+						"companial",
+						"triggers",
+						"beta",
+						"companies(c50aa7ca-cf97-ee11-be3b-6045bdaccf08)",
+						"headers",
+						""
+					],
+					"query": [
+						{
+							"key": "$expand",
+							"value": "lines"
+						},
+						{
+							"key": "$filter",
+							"value": "entryNo eq 3",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
